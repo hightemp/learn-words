@@ -7,6 +7,16 @@
   --success-color: #4caf50;
   --error-color: #f44336;
   --neutral-color: #2196f3;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --muted-text: #888;
+}
+
+:root[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #213547;
+  --card-background: #f9f9f9;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --muted-text: #666;
 }
 
 body {
@@ -31,12 +41,31 @@ body {
 .app-header {
   text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app-header h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin: 0.5rem 0;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.theme-toggle:hover {
+  color: var(--primary-color);
 }
 
 .current-level {
@@ -68,7 +97,7 @@ body {
 }
 
 .transcription {
-  color: #888;
+  color: var(--muted-text);
   font-style: italic;
 }
 
@@ -91,7 +120,7 @@ input {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--card-background);
   color: var(--text-color);
   transition: border-color 0.25s;
 }
@@ -160,8 +189,8 @@ button:focus-visible {
 .word-stats {
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #888;
+  border-top: 1px solid var(--border-color);
+  color: var(--muted-text);
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -245,7 +274,7 @@ button:focus-visible {
 }
 
 .translation-box {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(128, 128, 128, 0.05);
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;

@@ -7,6 +7,11 @@ const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 function App() {
     const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+    const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+        const savedTheme = localStorage.getItem('theme');
+        return (savedTheme as 'dark' | 'light') || 'dark';
+    });
+
     const {
         progress,
         currentWord,
@@ -23,6 +28,15 @@ function App() {
         }
     }, [selectedLevel]);
 
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+    };
+
     const handleResult = (isCorrect: boolean) => {
         if (currentWord) {
             recordAttempt(currentWord.word, isCorrect);
@@ -36,6 +50,13 @@ function App() {
     return (
         <div className="app">
             <header className="app-header">
+                <button 
+                    className="theme-toggle" 
+                    onClick={toggleTheme}
+                    title={`Переключить на ${theme === 'dark' ? 'светлую' : 'темную'} тему`}
+                >
+                    {theme === 'dark' ? '☀️' : '🌙'}
+                </button>
                 <h1>
                     Изучение слов
                     {selectedLevel && <span className="current-level"> Уровень {selectedLevel}</span>}
