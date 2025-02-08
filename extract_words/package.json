@@ -1,0 +1,15 @@
+{
+  "name": "extract_words",
+  "version": "1.0.0",
+  "main": "extract_words.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}

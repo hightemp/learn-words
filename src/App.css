@@ -1,0 +1,287 @@
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --background-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --card-background: #1a1a1a;
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --neutral-color: #2196f3;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0.5rem 0;
+}
+
+.current-level {
+  font-size: 0.6em;
+  color: var(--primary-color);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.word-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+}
+
+.word-header {
+  margin-bottom: 2rem;
+}
+
+.transcription {
+  color: #888;
+  font-style: italic;
+}
+
+.level {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.word-input {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+input {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  transition: border-color 0.25s;
+}
+
+input:hover {
+  border-color: var(--primary-color);
+}
+
+input:focus,
+input:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-top: 1rem;
+}
+
+.reset-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.word-result {
+  margin: 2rem 0;
+}
+
+.result {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.result.correct {
+  color: var(--success-color);
+}
+
+.result.incorrect {
+  color: var(--error-color);
+}
+
+.word-stats {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.word-stats p {
+  margin: 0;
+  font-size: 0.9em;
+  min-width: 150px;
+  text-align: center;
+}
+
+.level-select {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.level-select h2 {
+  margin-bottom: 2rem;
+}
+
+.level-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.level-button {
+  min-width: 100px;
+}
+
+.level-button.selected {
+  background-color: var(--success-color);
+}
+
+.no-words {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+.word-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.show-button {
+  background-color: var(--neutral-color);
+  min-width: 200px;
+}
+
+.show-button:hover {
+  background-color: #1976d2;
+}
+
+.remember-button {
+  background-color: var(--success-color);
+  min-width: 150px;
+}
+
+.remember-button:hover {
+  background-color: #388e3c;
+}
+
+.dont-remember-button {
+  background-color: var(--error-color);
+  min-width: 150px;
+}
+
+.dont-remember-button:hover {
+  background-color: #d32f2f;
+}
+
+.translation-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.translation-box h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-color);
+}
+
+.translation {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 0.5rem;
+  }
+
+  .app-header h1 {
+    font-size: 2.5em;
+  }
+
+  .word-card {
+    padding: 1rem;
+  }
+
+  .word-actions {
+    flex-direction: column;
+  }
+
+  .show-button,
+  .remember-button,
+  .dont-remember-button {
+    width: 100%;
+    min-width: unset;
+  }
+}
